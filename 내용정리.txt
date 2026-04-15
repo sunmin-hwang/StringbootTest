@@ -8,7 +8,7 @@
 4. maven 과 gradle의 차이 : 두 툴 모두 외부 라이브러리를 관리하고 프로젝트를 빌드해 주는 역할은 같지만, 설정 방식(XML vs 스크립트)과 빌드 속도에 차이가 있다.
     gradle이 빌드 속도같은건 더 빠르지만 내가 maven을 사용해왔기 때문에 세미나는 maven 위주로 진행. but gradle이 maven으로 할 수 있는것들을 다 할 수 있다고 하니 관심있으면 찾아보세요.
     https://mvnrepository.com/open-source/maven-plugins
-5. application.properties와 pom.xml 설명
+5. application.properties와 pom.xml(설계도) 설명
 6. 어노테이션과 Bean :
     어노테이션: @RestController, @Service, @Repository 등등
     빈: 스프링이 프로그램이 켜질 때 이 이름표가 붙은 클래스들을 찾아 스스로 메모리에 올려 만드는 객체

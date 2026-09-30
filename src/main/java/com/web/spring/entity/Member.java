@@ -56,7 +56,7 @@ public class Member {
 
 	@Override
 	public String toString() {
-		return "Member [memberNo=" + memberNo + ", id=" + id + ", pwd=" + pwd + ", name=" + name + ", address="
+		return "Member [memberNo=" + memberNo + ", id=" + id + ", name=" + name + ", address="
 				+ address + ", regDate=" + regDate + "]";
 	}
 	

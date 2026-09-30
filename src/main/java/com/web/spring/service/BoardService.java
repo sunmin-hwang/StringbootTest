@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -85,6 +86,7 @@ public class BoardService {
 	}
 	
 	//deleteBoard(Long id)
+	@PreAuthorize("hasRole('ADMIN')")
 	@Transactional
 	public String deleteBoard(Long id) throws DMLException {
 		Board boardEntity = boardRepository.findById(id).orElseThrow(()-> new DMLException("글번호 오류로 삭제에 실패했습니다.", "Not Delete", HttpStatus.BAD_REQUEST));

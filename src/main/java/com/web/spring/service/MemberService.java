@@ -1,5 +1,6 @@
 package com.web.spring.service;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -22,10 +23,12 @@ import lombok.RequiredArgsConstructor;
 public class MemberService {
 	
 	private final MemberRepository memberRepository;
+	private final PasswordEncoder passwordEncoder;
 	
 	//회원가입, 중복체크, 로그인
 	@Transactional
 	public void signUp(Member member) {
+		member.setPwd(passwordEncoder.encode(member.getPwd()));
 		Member rMember = memberRepository.save(member);
 		System.out.println("return Member ==> " + rMember);
 	}
@@ -43,7 +46,7 @@ public class MemberService {
 		Member rMember = memberRepository.duplicateCheck(id);
 		if(rMember==null)
 			throw new MemberAuthenticationException("아이디를 다시 확인하세요", "Wrong ID~~!!");
-		if(!rMember.getPwd().equals(pwd))
+		if(!passwordEncoder.matches(pwd, rMember.getPwd()))
 			throw new MemberAuthenticationException("비밀번호를 다시 확인하세요", "Wrong PWD~~!!");
 		return new MemberRes(rMember.getMemberNo(), rMember.getId(), rMember.getName());
 	}

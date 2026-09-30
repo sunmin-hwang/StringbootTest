@@ -1,0 +1,13 @@
+.git
+.gradle
+.idea
+.codex-build
+output
+target
+*.tar
+*.pptx
+~$*.pptx
+
+build/*
+!build/libs/
+!build/libs/*.war

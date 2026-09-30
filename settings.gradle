@@ -1,0 +1,5 @@
+rootProject.name = 'spring'
+
+// Groovy DSL을 실제 빌드 파일로 사용한다.
+// build.gradle.kts는 같은 설정을 Kotlin DSL로 작성한 학습용 예제다.
+rootProject.buildFileName = 'build.gradle'

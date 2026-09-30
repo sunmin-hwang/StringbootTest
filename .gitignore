@@ -25,9 +25,16 @@ target/
 /dist/
 /nbdist/
 /.nb-gradle/
+.gradle/
 build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
 ### VS Code ###
 .vscode/
+
+### Generated review and package files ###
+.codex-build/
+output/
+*.tar
+~$*.pptx
